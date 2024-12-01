@@ -1,0 +1,84 @@
+{
+  "realm": "oauth2-proxy",
+  "users": [
+    {
+      "id": "3356c0a0-d4d5-4436-9c5a-2299c71c08ec",
+      "username": "admin@example.com",
+      "email": "admin@example.com",
+      "emailVerified": true,
+      "createdTimestamp": 1591297959169,
+      "enabled": true,
+      "totp": false,
+      "credentials": [
+        {
+          "id": "a1a06ecd-fdc0-4e67-92cd-2da22d724e32",
+          "type": "password",
+          "createdDate": 1591297959315,
+          "secretData": "{\"value\":\"oaPCBPPZ9u+JO5klmuiyUOMySmmQlRvEYH2vwn+z58w=\",\"salt\":\"RQq5aV1IUoOaOfOpamRTRg==\",\"additionalParameters\":{}}",
+          "credentialData": "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+        }
+      ],
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": ["offline_access", "admin", "uma_authorization"],
+      "clientRoles": {
+        "account": ["view-profile", "manage-account"]
+      },
+      "notBefore": 0,
+      "groups": []
+    },
+    {
+      "id": "b20b8379-6de7-4cfe-8d33-de51728f0c44",
+      "username": "user1",
+      "firstName": "User1Name",
+      "lastName": "User1LastName",
+      "email": "user1@example.com",
+      "emailVerified": true,
+      "createdTimestamp": 1732687828827,
+      "enabled": true,
+      "totp": false,
+      "credentials": [
+        {
+          "id": "511988c8-c3bb-4802-b920-cf9116937a69",
+          "type": "password",
+          "userLabel": "My password",
+          "createdDate": 1732687836488,
+          "secretData": "{\"value\":\"x8zH17mMBvMXuxHTyBChjcyLkQU0nd3G/aHvza9SmMs=\",\"salt\":\"bf6bgDAQ7aDdh3Vg/PgvwQ==\",\"additionalParameters\":{}}",
+          "credentialData": "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+        }
+      ],
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": ["default-roles-oauth2-proxy"],
+      "notBefore": 0,
+      "groups": []
+    },
+    {
+      "id": "b0caa8fd-56b0-4af2-9eff-f51fa19b266f",
+      "username": "user2",
+      "firstName": "Ivan",
+      "lastName": "Ivanov",
+      "email": "user2@mail.ru",
+      "emailVerified": false,
+      "createdTimestamp": 1732707869836,
+      "enabled": true,
+      "totp": false,
+      "credentials": [
+        {
+          "id": "e2b36a8b-6f7c-4b01-9ed4-e9f6bac0fabb",
+          "type": "password",
+          "userLabel": "My password",
+          "createdDate": 1732707888504,
+          "secretData": "{\"value\":\"tzYxZG5bgoTYdsnkcmJdlNotLa1lsvf6C3ZudHKlPAo=\",\"salt\":\"Pf48X6Hz4OAgRFytxtbogQ==\",\"additionalParameters\":{}}",
+          "credentialData": "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+        }
+      ],
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": ["default-roles-oauth2-proxy"],
+      "notBefore": 0,
+      "groups": []
+    }
+  ]
+}
+
