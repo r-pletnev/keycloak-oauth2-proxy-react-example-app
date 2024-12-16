@@ -2,7 +2,9 @@ import { AuthProvider } from "react-admin";
 import { OAUTH2ProxyService } from "./oauth2ProxyService";
 import { MockUserDBService } from "./MockUserDBService";
 
-const ApiService = new OAUTH2ProxyService();
+const ApiService = new OAUTH2ProxyService({
+  proxyUrl: "http://oauth2-proxy.oauth2-proxy.localhost",
+});
 
 const accessControlStrategies = {
   admin: () => {

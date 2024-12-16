@@ -25,10 +25,11 @@ type UserInfoHeaderNames = {
 export class OAUTH2ProxyService {
   cache: Map<string, CacheEntry>;
   cacheTtl = 1 * 60 * 1000; // 1 minute
-  loginUrl = "http://oauth2-proxy.localtest.me:4180/oauth2/start";
-  userInfoUrl = "/oauth2/userinfo";
-  logoutUrl =
-    "http://oauth2-proxy.localtest.me:4180/oauth2/sign_out?rd=http%3A%2F%2Fkeycloak.localtest.me%3A9080%2Frealms%2Foauth2-proxy%2Fprotocol%2Fopenid-connect%2Flogout";
+  loginUrl: string;
+  userInfoUrl: string;
+  logoutUrl: string;
+  keycloakLogoutUrl =
+    "http%3A%2F%2Fkeycloak.localtest.me%3A9080%2Frealms%2Foauth2-proxy%2Fprotocol%2Fopenid-connect%2Flogout";
   headerNames: UserInfoHeaderNames = {
     email: EMAIL_HEADER,
     preferredUsername: PREFERRED_USERNAME_HEADER,
@@ -36,25 +37,23 @@ export class OAUTH2ProxyService {
     user: USER_ID_HEADER,
   };
 
-  constructor(
-    userInfoUrl?: string,
-    loginUrl?: string,
-    logoutUrl?: string,
-    cacheTtl?: number,
-    headerNames?: UserInfoHeaderNames
-  ) {
+  constructor({
+    headerNames,
+    cacheTtl,
+    proxyUrl,
+  }: {
+    cacheTtl?: number;
+    headerNames?: UserInfoHeaderNames;
+    proxyUrl: string;
+  }) {
     this.cache = new Map();
+
+    this.loginUrl = `${proxyUrl}/oauth2/start`;
+    this.userInfoUrl = `${proxyUrl}/oauth2/userinfo`;
+    this.logoutUrl = `${proxyUrl}/oauth2/sign_out?rd=${this.keycloakLogoutUrl}`;
+
     if (headerNames) {
       this.headerNames = headerNames;
-    }
-    if (loginUrl) {
-      this.loginUrl = loginUrl;
-    }
-    if (userInfoUrl) {
-      this.userInfoUrl = userInfoUrl;
-    }
-    if (logoutUrl) {
-      this.logoutUrl = logoutUrl;
     }
     if (cacheTtl) {
       this.cacheTtl = cacheTtl;
@@ -77,7 +76,7 @@ export class OAUTH2ProxyService {
 
   public async getUserInfoFromAPI(): Promise<UserInfo> {
     return this.memorize(this.userInfoUrl, async (url) => {
-      const response = await fetch(url);
+      const response = await fetch(url, { credentials: "include" });
       if (!response.ok) {
         throw new Error(response.statusText);
       }

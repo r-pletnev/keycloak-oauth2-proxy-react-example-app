@@ -1772,6 +1772,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"decode-uri-component@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "decode-uri-component@npm:0.4.1"
+  checksum: 3eee643421fa8657b28a85ddfc87b615c064d378f95b3c4b7a0d9bcb8efaab701da79000879b5da53155c158df8d597ea490767dfa6b5ae1387b30c3cae661bb
+  languageName: node
+  linkType: hard
+
 "define-data-property@npm:^1.0.1, define-data-property@npm:^1.1.4":
   version: 1.1.4
   resolution: "define-data-property@npm:1.1.4"
@@ -2047,6 +2054,13 @@ __metadata:
   version: 1.1.0
   resolution: "filter-obj@npm:1.1.0"
   checksum: ae94072c11c7bf14d8baa6e9b99770dc2324088ae47081b2961e461d35b4cfa3dbe34a2e747ae98a8e789255480d0e28b2cf970dd8ce3cfba301e76cda03344c
+  languageName: node
+  linkType: hard
+
+"filter-obj@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "filter-obj@npm:5.1.0"
+  checksum: d8a02bce6de66c7a741aca6a650b83815126b05453873382ee6ff6a2c3c912ed59f6ad8359c7659adb4bec336f05181b5aa2709b7c0e3e3a77b66b9cf64f9ab5
   languageName: node
   linkType: hard
 
@@ -3035,6 +3049,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"query-string@npm:^9.1.1":
+  version: 9.1.1
+  resolution: "query-string@npm:9.1.1"
+  dependencies:
+    decode-uri-component: "npm:^0.4.1"
+    filter-obj: "npm:^5.1.0"
+    split-on-first: "npm:^3.0.0"
+  checksum: 7ee4a78bee57ba3363cf542a6c963e9bb285cb6476950b0f48228a01bf6cbf79d7dbbd83162c986f07f88265f4a45b96f8459e0e0f69119129fac71fdfab7fd1
+  languageName: node
+  linkType: hard
+
 "ra-core@npm:^5.4.0":
   version: 5.4.0
   resolution: "ra-core@npm:5.4.0"
@@ -3519,6 +3544,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.2.1"
     jsonexport: "npm:^3.2.0"
     lodash: "npm:~4.17.5"
+    query-string: "npm:^9.1.1"
     ra-core: "npm:^5.4.0"
     ra-data-fakerest: "npm:^5.4.0"
     ra-i18n-polyglot: "npm:^5.4.0"
@@ -3584,6 +3610,13 @@ __metadata:
   version: 1.1.0
   resolution: "split-on-first@npm:1.1.0"
   checksum: ae2bc24abc415ee7b2259ae4572857a84650b610b2ee6436b50bc8563840a74ee38b0a32c0e1d9ac4986e16408c934f01018dc6c33fdaaadd45356efa78c7e1b
+  languageName: node
+  linkType: hard
+
+"split-on-first@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "split-on-first@npm:3.0.0"
+  checksum: 2868f999326d29f74cd18f6768beaf0f5131596c631d2a70659d18b6599466f6120732b2c4a522c7311e39bcb505da185a54c2b11a9e2d866ac224e623c856a6
   languageName: node
   linkType: hard
 
