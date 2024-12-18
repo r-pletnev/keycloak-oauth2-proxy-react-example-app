@@ -9,6 +9,8 @@ services:
     volumes:
       - "./oauth2-proxy.cfg:/oauth2-proxy.cfg"
     restart: unless-stopped
+    ports:
+      - "4180:4180"
     networks:
       keycloak: {}
     depends_on:
