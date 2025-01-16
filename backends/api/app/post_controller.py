@@ -1,8 +1,21 @@
 from litestar import Controller, delete, get, post
 from litestar.datastructures import ResponseHeader
 from litestar.di import Provide
+from litestar.logging import LoggingConfig
 from app.post_models import Post
 from app.post_service import PostService, post_service
+
+logging_config = LoggingConfig(
+    root={"level": "INFO", "handlers": ["queue_listener"]},
+    formatters={
+        "standard": {
+            "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        }
+    },
+    log_exceptions="always",
+)
+
+logger = logging_config.configure()()
 
 
 class PostController(Controller):
@@ -17,7 +30,7 @@ class PostController(Controller):
     async def get_list_of_posts(
         self, service: PostService, headers: dict
     ) -> list[Post]:
-        print(headers)
+        logger.info(f"headers: {headers}")
         return service.get_list()
 
     @get(path="/{id:int}")
